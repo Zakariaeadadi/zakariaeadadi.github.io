@@ -1,5 +1,26 @@
-/* Animation للـnavbar */
+/* Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f7fafc;
+    color: #2d3748;
+}
+
+/* Navbar */
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+
+    /* Animation */
     animation: slideDown 0.8s ease-in-out;
 }
 @keyframes slideDown {
@@ -13,17 +34,64 @@
     }
 }
 
-/* زر المشاريع */
-#projets .projets div button {
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-#projets .projets div button:hover {
-    background-color: #2c5282; /* أزرق أغمق بدل الأحمر */
-    transform: scale(1.05);
+.navbar nav a {
+    text-decoration: none;
+    color: #2b6cb0;
+    font-weight: bold;
+    margin: 0 15px;
+    transition: color 0.3s ease;
 }
 
-/* الصورة الشخصية */
+.navbar nav a:hover {
+    color: #2c5282;
+}
+
+/* Header */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px 40px;
+    gap: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #2b6cb0;
+}
+
+header p {
+    font-size: 1.1rem;
+    margin: 20px auto;
+    line-height: 1.6;
+    max-width: 700px;
+    text-align: justify;
+    color: #2d3748;
+}
+
+header button {
+    background-color: #2b6cb0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+header button:hover {
+    background-color: #2c5282;
+}
+
+/* Image */
 header img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 header img:hover {
@@ -31,8 +99,26 @@ header img:hover {
     box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
 
-/* Skills ظهور تدريجي */
+/* Compétences */
+#competences {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #ffffff;
+}
+#competences h2 {
+    color: #2b6cb0;
+}
+
 .skills-container p {
+    display: inline-block;
+    background-color: #ebf8ff;
+    color: #2b6cb0;
+    margin: 8px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+
+    /* Animation fade */
     opacity: 0;
     transform: translateY(20px);
     animation: fadeUp 0.8s forwards;
@@ -50,7 +136,69 @@ header img:hover {
     }
 }
 
-/* Sections عند الscroll */
+/* Projets */
+#projets {
+    padding: 40px 20px;
+    background-color: #edf2f7;
+    text-align: center;
+}
+.projets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.projets div {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+#projets .projets div button {
+    background-color: #2b6cb0;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+#projets .projets div button:hover {
+    background-color: #2c5282;
+    transform: scale(1.05);
+}
+
+/* Contact */
+#contact {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 30px 0;
+}
+.links a img {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.links a img:hover {
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2b6cb0;
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* Sections Scroll Animation */
 section {
     opacity: 0;
     transform: translateY(40px);

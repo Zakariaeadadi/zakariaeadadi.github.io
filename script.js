@@ -1,9 +1,11 @@
-    const sections = document.querySelectorAll("section");
-    window.addEventListener("scroll", () => {
-        sections.forEach(sec => {
-            const rect = sec.getBoundingClientRect();
-            if(rect.top < window.innerHeight - 100){
-                sec.classList.add("visible");
-            }
-        });
-    });
+// Animation des sections au scroll
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+  sections.forEach(section => {
+    const sectionTop = section.getBoundingClientRect().top;
+    if (sectionTop < window.innerHeight - 100) {
+      section.classList.add("visible");
+    }
+  });
+});
